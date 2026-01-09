@@ -8,9 +8,10 @@ on:
     pull_request: #whenever a push request is made to the repsitory 
         branches:
             - master
-#if you do any push request or any pull_request these jobs will run we dont want to do that so                    
+#if you do any push request or any pull_request these jobs will run we dont want to do that so we use if conditions                 
 jobs:
     on-push: #job name
+        if: github.event == 'push'
         runs-on: ubuntu-latest
         steps: #steps to be executed in the job
             - name: Running on master/test push #step 1
@@ -18,6 +19,7 @@ jobs:
 
     
     on-pull-request: # job name
+        if: github.event_name == 'pull_request'
         runs-on: ubuntu-latest
         steps: #steps to be wxecuted in the job
             - name: Running on pull request # step 1
