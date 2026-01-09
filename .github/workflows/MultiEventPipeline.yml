@@ -26,3 +26,9 @@ jobs:
         steps: #steps to be excuted in the job
             - name: Running on pull request # step 1
               run: echo "Running on pull request"
+    on-workflow-dispach:
+        if: github.event_name == 'workflow_dispach'
+        runs-on: ubuntu-latest
+        steps: 
+            - name: running on workflow-dispach
+              run: echo "Running on workflow_dispach"
