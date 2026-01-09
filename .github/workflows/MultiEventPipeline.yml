@@ -8,7 +8,9 @@ on:
     pull_request: #whenever a push request is made to the repsitory 
         branches:
             - master
-        #if you do any pull_request or any pull_request these jobs will run we dont want to do that so we use if conditions                 
+            - test
+        
+    #if you do any pull_request or any pull_request these jobs will run we dont want to do that so we use if conditions                 
 jobs:
     on-push: #job name
         if: github.event_name == 'push'
