@@ -1,4 +1,4 @@
-name: MultiEventPipeline
+name: MultiEventPipeline/workflow
 
 on: 
     push: #event: whenever a push is made to the repository on the master branch 
@@ -10,8 +10,8 @@ jobs:
     on-push: #job name
         runs-on: ubuntu-latest
         steps: #steps to be executed in the job
-            - name: Running on master push #step 1
-              run: echo "Running on master push"
+            - name: Running on master/test push #step 1
+              run: echo "Running on master/test push"
 
     
 
