@@ -5,7 +5,10 @@ on:
         branches:
             - master
             - test
-
+    pull_request: #whenever a push request is made to the repsitory 
+        branches:
+            - master
+#if you do any push request or any pull_request these jobs will run we dont want to do that so                    
 jobs:
     on-push: #job name
         runs-on: ubuntu-latest
@@ -14,4 +17,8 @@ jobs:
               run: echo "Running on master/test push"
 
     
-
+    on-pull-request: # job name
+        runs-on: ubuntu-latest
+        steps: #steps to be wxecuted in the job
+            - name: Running on pull request # step 1
+              run: echo "Running on pull request"
