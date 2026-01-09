@@ -8,7 +8,7 @@ on:
     pull_request: #whenever a push request is made to the repsitory 
         branches:
             - master
-           types:
+        types:
             - closed
     workflow_dispatch:
     
