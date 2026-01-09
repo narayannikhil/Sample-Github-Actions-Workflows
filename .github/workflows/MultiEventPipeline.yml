@@ -11,6 +11,7 @@ on:
         types:
             - closed #action closed onlt then it will work on master only so add opened so it will work on other braches
             - opened
+           
     workflow_dispatch:
     
 
@@ -35,13 +36,13 @@ jobs:
         if: github.event_name == 'pull_request' && github.event.action == 'opened'
         runs-on: ubuntu-latest
         steps:
-            - name: "Running on pull request opened"
+            - name: Running on pull request opened
               run: echo "Running on Pull request opened"
     on-pull-request-closed:
         if: github.event_name == 'pull_request' && github.event.action == 'closed'
         runs-on: ubuntu-latest
         steps:
-            - name: "Running on pull request closed"
+            - name: Running on pull request closed
               run: echo "Running on Pull request closed"
 
    
