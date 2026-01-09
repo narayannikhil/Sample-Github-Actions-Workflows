@@ -8,8 +8,12 @@ on:
     pull_request: #whenever a push request is made to the repsitory 
         branches:
             - master
-            - test
+           types:
+            - closed
     workflow_dispatch:
+    
+
+
     #if you do any pull_request or any pull_request these jobs will run we dont want to do that so we use if conditions                 
 jobs:
     on-push: #job name
@@ -26,6 +30,12 @@ jobs:
         steps: #steps to be excuted in the job
             - name: Running on pull request # step 1
               run: echo "Running on pull request"
+    on-pull-request-closed:
+        if: github.event_name = 'pull_request' && github.event.action == 'closed'
+        runs-on: ubuntu-latest
+        steps:
+            - name: "Running on pull request closed"
+              run: echo "Running on Pull request closed"
     on-workflow-dispach:
         if: github.event_name == 'workflow_dispach'
         runs-on: ubuntu-latest
