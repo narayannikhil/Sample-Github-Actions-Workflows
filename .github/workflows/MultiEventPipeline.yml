@@ -11,7 +11,7 @@ on:
 #if you do any push request or any pull_request these jobs will run we dont want to do that so we use if conditions                 
 jobs:
     on-push: #job name
-        if: github.event == 'push'
+        if: github.event_name == 'push'
         runs-on: ubuntu-latest
         steps: #steps to be executed in the job
             - name: Running on master/test push #step 1
